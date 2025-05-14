@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Data from './PortfolioData';
 
-const Portfolio = () => {
+const FeaturedPortfolio = () => {
     const [activeTab, setActiveTab] = useState("all");
     const isActive = (category) => {
         return activeTab === category ? "active" : "";
-      };
+    };
 
     const displayContent = (category) => {
 
@@ -21,16 +21,15 @@ const Portfolio = () => {
     };
     return (
         <div>
-
             <div id='portfolio' className='container text-center '>
                 <h2 ><span className='fw-lighter '>Featured</span><span className='fw-bolder '> Portfolio</span></h2>
                 <div>
                     <ul className=' portfolio-links d-flex justify-content-center flex-wrap'>
                         <li className={`nav-link m-4 ${isActive("all")}`} onClick={() => setActiveTab("all")}>All</li>
-                        <li className={`nav-link m-4 ${isActive("packaging")}`}  onClick={() => setActiveTab("packaging")}>Packaging</li>
-                        <li className={`nav-link m-4 ${isActive("mockup")}`}  onClick={() => setActiveTab("mockup")}>Mockup</li>
-                        <li className={`nav-link m-4 ${isActive("typography")}`}  onClick={() => setActiveTab("typography")}>Typography</li>
-                        <li className={`nav-link m-4 ${isActive("photography")}`}  onClick={() => setActiveTab("photography")}>Photography</li>
+                        <li className={`nav-link m-4 ${isActive("packaging")}`} onClick={() => setActiveTab("packaging")}>Packaging</li>
+                        <li className={`nav-link m-4 ${isActive("mockup")}`} onClick={() => setActiveTab("mockup")}>Mockup</li>
+                        <li className={`nav-link m-4 ${isActive("typography")}`} onClick={() => setActiveTab("typography")}>Typography</li>
+                        <li className={`nav-link m-4 ${isActive("photography")}`} onClick={() => setActiveTab("photography")}>Photography</li>
                     </ul>
                 </div>
                 <div className='tab-content row'>
@@ -41,9 +40,8 @@ const Portfolio = () => {
                     {activeTab === "photography" && displayContent("photography")}
                 </div>
             </div>
-
         </div>
     )
 }
 
-export default Portfolio
+export default FeaturedPortfolio
